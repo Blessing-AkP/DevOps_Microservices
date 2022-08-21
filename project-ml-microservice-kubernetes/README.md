@@ -6,7 +6,7 @@ This project operationalizes a Machine Learning Microservices API using various 
 The main goal of this project is to shows how a pre-trained SKLEARN model, that has been trained to predict housing prices in Boston with several other features, can be operationalized and deployed in containers using kubernetes. The python flask app serve as application (app.py) for the model, which serves out prediction about housing prices through API calls. Any pre-trained machine learning model, such as those for image recognition and data labeling, could be incorporated into this project.
 
 
-### Procedures
+## Procedures
 
 Using Kubernetes, which is an open-source technology for automating the deployment of containerized applications, the project's goal is to operationalize this functional machine learning microservice, through the following processes.
 * Test the project code using linting
@@ -51,7 +51,7 @@ source .devops/bin/activate
 
 In order to test out our application we need to configure kubernetes locally. Consider the following procedures to setup and configure kubernetes.
 
-*System requirement:*
+## System requirement:
 
 •	2 CPUs or more
 •	2GB of free memory
@@ -59,7 +59,7 @@ In order to test out our application we need to configure kubernetes locally. Co
 •	Internet connection
 •	Container or virtual machine manager, such as: Docker, Hyperkit, Hyper-V, KVM etc.
 
-For the purpose of this project we would have docker installed then  *run the following command for linux operating system.*
+# For the purpose of this project we would have docker installed then  *run the following command for linux operating system.*
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
@@ -67,28 +67,28 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 for other operating system, please visit  https://minikube.sigs.k8s.io/docs/start/
 Incase you're yet to install docker, visit: https://docs.docker.com/get-docker/
 
-*Test your cluster with:* 
+# Test your cluster with: 
   minikube start
 
-Next, docker image for flask app using the following command:
+# Next, docker image for flask app using the following command:
 docker build -t username/flaskapp:tag .
 
 note: The image can be any name and the tag is optional
 
-Next, list the docker image so as to get the flask app running:
+# Next, list the docker image so as to get the flask app running:
 docker image ls
 
-then run the flask app
+# Then run the flask app
 docker run -it -p 8000:80 username/flaskapp:tag
 
-Now we can run kubernetes using kubectl
+# Now we can run kubernetes using kubectl
 
 kubectl get pods
 kubectl run flask-app --image=username/flaskapp:tag --port=80
 
 sleep 100
 
-Enable port forwarding to forward the containers ports to a host
+# Enable port forwarding to forward the containers ports to a host
 kubectl port-forward flask-app 8000:80
 
 
