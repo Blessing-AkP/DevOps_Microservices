@@ -1,25 +1,23 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Blessing-AkP/DevOps_Microservices/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Blessing-AkP/DevOps_Microservices/tree/master)
 
-## Project Overview
+## INTRODUCTION
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+This project operationalizes a Machine Learning Microservices API using various DevOps approaches.
+The main goal of this project is to shows how a pre-trained SKLEARN model, that has been trained to predict housing prices in Boston with several other features, can be operationalized and deployed in containers using kubernetes. The python flask app serve as application (app.py) for the model, which serves out prediction about housing prices through API calls. Any pre-trained machine learning model, such as those for image recognition and data labeling, could be incorporated into this project.
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
-### Project Tasks
+### Procedures
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
+Using Kubernetes, which is an open-source technology for automating the deployment of containerized applications, the project's goal is to operationalize this functional machine learning microservice, through the following processes.
+* Test the project code using linting
 * Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
+* Deploy the containerized application using Docker and make a prediction
 * Improve the log statements in the source code for this application
 * Configure Kubernetes and create a Kubernetes cluster
 * Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
+* Upload a complete Github repo with CircleCI to indicate that thecode has been tested successfully.
 
 You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
-
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
 
 ---
 
@@ -48,6 +46,51 @@ source .devops/bin/activate
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+### Setup Kubernetes Locally
+
+In order to test out our application we need to configure kubernetes locally. Consider the following procedures to setup and configure kubernetes.
+
+*System requirement:*
+
+•	2 CPUs or more
+•	2GB of free memory
+•	20GB of free disk space
+•	Internet connection
+•	Container or virtual machine manager, such as: Docker, Hyperkit, Hyper-V, KVM etc.
+
+For the purpose of this project we would have docker installed then  *run the following command for linux operating system.*
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+for other operating system, please visit  https://minikube.sigs.k8s.io/docs/start/
+Incase you're yet to install docker, visit: https://docs.docker.com/get-docker/
+
+*Test your cluster with:* 
+  minikube start
+
+Next, docker image for flask app using the following command:
+docker build -t username/flaskapp:tag .
+
+note: The image can be any name and the tag is optional
+
+Next, list the docker image so as to get the flask app running:
+docker image ls
+
+then run the flask app
+docker run -it -p 8000:80 username/flaskapp:tag
+
+Now we can run kubernetes using kubectl
+
+kubectl get pods
+kubectl run flask-app --image=username/flaskapp:tag --port=80
+
+sleep 100
+
+Enable port forwarding to forward the containers ports to a host
+kubectl port-forward flask-app 8000:80
+
 
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Blessing-AkP/DevOps_Microservices/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Blessing-AkP/DevOps_Microservices/tree/master)
