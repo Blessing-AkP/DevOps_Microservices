@@ -36,9 +36,6 @@ source .devops/bin/activate
 ```
 * Run `make install` to install the necessary dependencies
 
-
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Blessing-AkP/DevOps_Microservices/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Blessing-AkP/DevOps_Microservices/tree/master)
-
 ### Running `app.py`
 
 1. Standalone:  `python app.py`
@@ -51,3 +48,6 @@ source .devops/bin/activate
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Blessing-AkP/DevOps_Microservices/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Blessing-AkP/DevOps_Microservices/tree/master)
