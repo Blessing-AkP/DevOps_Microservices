@@ -104,3 +104,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#kubectl
+kubectl
+kubectl.sha256
