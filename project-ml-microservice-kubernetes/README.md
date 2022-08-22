@@ -68,21 +68,25 @@ for other operating system, please [visit, here](https://minikube.sigs.k8s.io/do
 Incase you're yet to install docker [visit, here](https://docs.docker.com/get-docker/).
 
 Test your cluster with: 
-`minikube start`
-Next, docker image for flask app using the following command:
-`docker build -t username/flaskapp:tag .`
+`minikube start`.
+Next, docker image for flask app using the following command:.
+`docker build -t username/flaskapp:tag .`.
 
-**note:** _The image can be any name and the tag is optional_
+**note:** _The image can be any name and the tag is optional_.
 
 Next, list the docker image so as to get the flask app running:
 `docker image ls`
-Then run the flask app
-`docker run -it -p 8000:80 username/flaskapp:tag`
-**Now we can run kubernetes using kubectl**
-`kubectl get pods
-kubectl run flask-app --image=username/flaskapp:tag --port=80
-sleep 100`
+
+Then run the flask app.
+`docker run -it -p 8000:80 username/flaskapp:tag`.
+
+**Now we can run kubernetes using kubectl**.
+`kubectl get pods.
+kubectl run flask-app --image=username/flaskapp:tag --port=80.
+sleep 100`.
+
 Enable port forwarding to forward the containers ports to a host
+
 `kubectl port-forward flask-app 8000:80`
 
 
