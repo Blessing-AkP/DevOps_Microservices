@@ -17,8 +17,6 @@ Using Kubernetes, which is an open-source technology for automating the deployme
 * Deploy a container using Kubernetes and make a prediction
 * Upload a complete Github repo with CircleCI to indicate that thecode has been tested successfully.
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
-
 ---
 
 ## Setup the Environment
@@ -53,37 +51,46 @@ In order to test out our application we need to configure kubernetes locally. Co
 
 #### System requirement:
 
-•	2 CPUs or more
-•	2GB of free memory
-•	20GB of free disk space
-•	Internet connection
-•	Container or virtual machine manager, such as: Docker, Hyperkit, Hyper-V, KVM etc.
+* 2 CPUs or more
+* 2GB of free memory
+*	20GB of free disk space
+*	Internet connection
+*	Container or virtual machine manager, such as: Docker, Hyperkit, Hyper-V, KVM etc.
 
 _For the purpose of this project we would have docker installed then run the following command for linux operating system._
 
-`curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube`
+```curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+```
 
 for other operating system, please [visit, here](https://minikube.sigs.k8s.io/docs/start/).
+
 Incase you're yet to install docker [visit, here](https://docs.docker.com/get-docker/).
 
 Test your cluster with: 
+
 `minikube start`.
+
 Next, docker image for flask app using the following command:.
+
 `docker build -t username/flaskapp:tag .`.
 
 **note:** _The image can be any name and the tag is optional_.
 
 Next, list the docker image so as to get the flask app running:
+
 `docker image ls`
 
 Then run the flask app.
+
 `docker run -it -p 8000:80 username/flaskapp:tag`.
 
 **Now we can run kubernetes using kubectl**.
-`kubectl get pods.
+
+```kubectl get pods.
 kubectl run flask-app --image=username/flaskapp:tag --port=80.
-sleep 100`.
+sleep 100
+```
 
 Enable port forwarding to forward the containers ports to a host
 
