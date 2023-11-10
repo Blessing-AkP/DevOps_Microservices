@@ -1,5 +1,5 @@
 ## Microservices at Scale using AWS & Kubernetes 
----
+
 This Cloud DevOps project  focuses  on operationalizing a machine learning microservice API using industry-standard tools like Docker, Kubernetes, AWS Lambda, and CircleCI. The project is designed to offer a practical and hands-on experience in deploying and managing a containerized machine learning application within a scalable and resilient environment.
 ---
 
