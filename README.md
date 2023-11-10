@@ -1,4 +1,4 @@
-## Cloud DevOps ND - C4- Microservices at Scale using AWS & Kubernetes - Supporting Material and Project Starter
+## Cloud DevOps ND - C4- Microservices at Scale using AWS & Kubernetes 
 
 ---
 
