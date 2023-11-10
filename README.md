@@ -1,27 +1,30 @@
-## Cloud DevOps ND - C4- Microservices at Scale using AWS & Kubernetes 
-
+## Microservices at Scale using AWS & Kubernetes 
+---
+This Cloud DevOps project  focuses  on operationalizing a machine learning microservice API using industry-standard tools like Docker, Kubernetes, AWS Lambda, and CircleCI. The project is designed to offer a practical and hands-on experience in deploying and managing a containerized machine learning application within a scalable and resilient environment.
 ---
 
 ### A. Dependencies
 #### A.1. Python
+Essential for executing project code and managing dependencies.
 [Download and install the python](https://www.python.org/downloads/). 
 
 #### A.2. Docker Desktop
-You would require you to install Docker Desktop to create containers for individual microservices. Refer the following links for instructions 
+Required to create containers for individual microservices.
+Installation guide:
 * [macOS](https://docs.docker.com/docker-for-mac/install/), 
 * [Windows 10 64-bit: Pro, Enterprise, or Education](https://docs.docker.com/docker-for-windows/install/), 
 * [Windows  10 64-bit Home](https://docs.docker.com/toolbox/toolbox_install_windows/). 
-* You can find installation instructions for other operating systems at:  https://docs.docker.com/install/
+
 
 #### A.3. Kubernetes 
-You would need to install any one tool for creating a Kubernetes cluster - KubeOne / Minikube / kubectl on top of Docker Desktop:
-1. [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) directly on top of Docker desktop - For Windows/macOS
-2. [Install Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) - For Linux/macOS
+Utilize AWS EKS to establish a Kubernetes cluster, offering a robust platform for container orchestration.
 
 #### A.4. AWS account to access AWS Lambda
-You'll need an [AWS account](https://aws.amazon.com/free/?all-free-tier.&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc) to get started with [AWS Lambda](https://aws.amazon.com/lambda/), which is a serverless computing platform on cloud.  
+Access AWS Lambda, a serverless computing platform, allowing seamless integration into cloud environments.
+You'll need an [AWS account]
 
-#### A.5. An account with Circle CI
+#### A.5. Circle CI
+Utilize CircleCI with GitHub credentials to leverage continuous integration practices.
 You may sign up on [CircleCI.com](https://circleci.com/signup/) with your GitHub credentials. 
 
 ---
@@ -32,30 +35,20 @@ You may sign up on [CircleCI.com](https://circleci.com/signup/) with your GitHub
 
 ---
 
-### C. Tutorials
+### Project Instructions
 
-#### C.1. AWS Lambda & Serverless
+All of the following instructions are to be completed via a terminal/command line prompt. 
+---
+### Create and Activate an Environment
 
-* [Making Change](https://github.com/udacity/DevOps_Microservices/tree/master/lambda-functions/make-change-tutorial): Create and deploy a serverless lambda function that responds to an input request; this example creates the correct amount of change to make up a value in US dollars.
-* [Wikipedia Query](https://github.com/udacity/DevOps_Microservices/tree/master/lambda-functions/wikipedia-query): Deploy a lambda function that responds to an input, wikipedia page query; this example returns the first sentence of a specific wikipedia page upon being queried.
-
-
-### D. Project Instructions
-
-* [Operationalize a Machine Learning Microservice API](https://github.com/udacity/DevOps_Microservices/tree/master/project-ml-microservice-kubernetes): Deploy a containerized, machine learning application using Kubernetes.
-
-To run any project code, you'll have to set up a virtual environment with the project dependencies. All of the following instructions are to be completed via a terminal/command line prompt. 
-
-### E. Create and Activate an Environment
-
-#### E.1. Git and version control
+#### Git and version control
 These instructions also assume you have `git` installed for working with Github from a terminal window, but if you do not, you can download that first from this [Github installation page](https://www.atlassian.com/git/tutorials/install-git).
 
 **Now, you're ready to create your local environment!**
 
 1. If you haven't already done so, clone the project repository, and navigate to the main project folder. 
 ```bash
-git clone https://github.com/udacity/DevOps_Microservices.git
+git clone https://github.com/Blessing-AkP/DevOps_Microservices.git
 cd DevOps_Microservices/project-ml-microservice-kubernetes
 ```
 
@@ -76,14 +69,14 @@ Now most of the `.devops` libraries are available to you. There are a couple of 
 
 ---
 
-#### E.2. Other Libraries
+#### Other Libraries
 
 While you still have your `.devops` environment activated, you will still need to install:
 * Docker
 * Hadolint
 * Kubernetes ([Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) if you want to run Kubernetes locally)
 
-#### E.3. Docker
+#### Docker
 
 You will need to use Docker to build and upload a containerized application. If you already have this installed and created a docker account, you may skip this step.
 
@@ -93,7 +86,7 @@ You will need to use Docker to build and upload a containerized application. If 
 
 3. After installation, you can verify that you’ve successfully installed docker by printing its version in your terminal: `docker --version`
 
-#### E.4. Run Lint Checks
+#### Run Lint Checks
 
 This project also must pass two lint checks; `hadolint` checks the Dockerfile for errors and `pylint` checks the `app.py` source code for errors.
 
